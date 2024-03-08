@@ -20,7 +20,7 @@ const defaultTodoValue = {
     },
   ],
   activeFilter: "all",
-  darkTheme: false,
+  darkTheme: true,
 };
 
 /////////////////
