@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+
+@media (min-width: 1400px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+
+@media (min-width: 1800px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media (min-width: 2000px) {
+  html {
+    font-size: 100%;
+  }
+}
+
