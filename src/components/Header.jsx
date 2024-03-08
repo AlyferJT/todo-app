@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import sunIcon from "/assets/SVG/sunIcon.svg";
-import moonIcon from "/assets/SVG/moonIcon.svg";
+import sunIcon from "../assets/SVG/sunIcon.svg";
+import moonIcon from "../assets/SVG/moonIcon.svg";
 
 import { useContext } from "react";
 import { TodoContext } from "../todo/TodoContext";
@@ -11,7 +11,9 @@ function Header() {
   return (
     <HeaderStyled $dark={darkTheme}>
       <h1>Todo</h1>
-      <button onClick={onToggleTheme}></button>
+      <button onClick={onToggleTheme}>
+        <img src={darkTheme ? sunIcon : moonIcon} />
+      </button>
     </HeaderStyled>
   );
 }
@@ -33,11 +35,16 @@ const HeaderStyled = styled.header`
 
   & button {
     border: none;
-    background: url(${(props) => (props.$dark ? sunIcon : moonIcon)}) no-repeat
-      center;
-    background-size: contain;
     width: 2rem;
     height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+
+    & img {
+      width: 2rem;
+    }
 
     &:hover {
       cursor: pointer;

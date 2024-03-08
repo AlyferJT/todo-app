@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import checkIcon from "/assets/SVG/checkIcon.svg";
+import checkIcon from "../assets/SVG/checkIcon.svg";
 
 import { useContext } from "react";
 import { TodoContext } from "../todo/TodoContext";
@@ -9,7 +9,9 @@ function CheckButton({ ...props }) {
   const { darkTheme } = useContext(TodoContext);
   return (
     <ButtonStyled $dark={darkTheme} {...props}>
-      <button></button>
+      <button>
+        <img src={checkIcon} />
+      </button>
     </ButtonStyled>
   );
 }
@@ -25,6 +27,13 @@ const ButtonStyled = styled.div`
       ${(props) => (props.$dark ? "hsl(233, 14%, 35%)" : "hsl(236, 33%, 92%)")};
     border-radius: 50%;
     transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & img {
+      display: none;
+    }
 
     &:hover {
       cursor: pointer;
@@ -52,14 +61,8 @@ const ButtonStyled = styled.div`
         hsl(280, 87%, 65%)
       );
 
-      &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -0.05rem;
-        background: url(${checkIcon}) no-repeat;
-        background-position: center;
-        padding: 1rem;
+      & img {
+        display: block;
       }
 
       &:hover {

@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { Draggable } from "@hello-pangea/dnd";
-
-import CheckButton from "./CheckButton";
-import crossIcon from "/assets/SVG/crossIcon.svg";
-
 import { useContext } from "react";
 import { TodoContext } from "../todo/TodoContext";
+
+import CheckButton from "./CheckButton";
+
+import crossIcon from "../assets/SVG/crossIcon.svg";
 
 function TodoItem({ status, children, empty, id, index }) {
   const { darkTheme, onDeleteTodo, onToggleStatus } = useContext(TodoContext);
@@ -31,7 +31,9 @@ function TodoItem({ status, children, empty, id, index }) {
                 onClick={() => onToggleStatus(id)}
               ></CheckButton>
               <p>{children}</p>
-              <button id="crossBtn" onClick={() => onDeleteTodo(id)}></button>
+              <button id="crossBtn" onClick={() => onDeleteTodo(id)}>
+                <img src={crossIcon} />
+              </button>
             </>
           )}
         </LiStyled>
@@ -90,16 +92,26 @@ const LiStyled = styled.li`
   }
 
   & #crossBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: none;
     border: none;
-    background: url(${(props) => props.crossImg}) no-repeat center;
-    width: 1.1rem;
-    height: 1.1rem;
+    width: 2rem;
+    height: 2rem;
     transition: transform 0.1s;
+
+    & img {
+      width: 1.1rem;
+      height: 1.1rem;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
 
     &:hover {
       cursor: pointer;
-      transform: scale(1.1);
     }
   }
 
