@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Draggable } from "@hello-pangea/dnd";
 
 import CheckButton from "./CheckButton";
-import crossIcon from "../assets/SVG/crossIcon.svg";
+import crossIcon from "/assets/SVG/crossIcon.svg";
 
 import { useContext } from "react";
 import { TodoContext } from "../todo/TodoContext";
