@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import checkIcon from "./SVG/icon-check.svg";
+import checkIcon from "../assets/SVG/checkIcon";
 
 import { useContext } from "react";
 import { TodoContext } from "../todo/TodoContext";

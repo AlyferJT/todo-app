@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import sunIcon from "./SVG/icon-sun.svg";
-import moonIcon from "./SVG/icon-moon.svg";
+import sunIcon from "../assets/SVG/sunIcon";
+import moonIcon from "../assets/SVG/moonIcon";
 
 import { useContext } from "react";
 import { TodoContext } from "../todo/TodoContext";
